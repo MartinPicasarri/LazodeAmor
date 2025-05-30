@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import './Navbar.css'; // Asegúrate de importar tu archivo CSS
+import './Navbar.css'; 
 
 const Navbar = () => {
   const [isTransparent, setIsTransparent] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Define la posición de scroll en la que quieres que empiece la transparencia
       const scrollThreshold = 100;
       if (window.scrollY > scrollThreshold) {
         setIsTransparent(true);
@@ -18,7 +17,6 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Limpia el event listener cuando el componente se desmonte
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
